@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="description" content="Instituto Pivote — premium Spanish language institute in Egypt. Learn Spanish with confidence. Book a free placement test today." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; font-family: 'Manrope', system-ui, sans-serif; color: #1C1C1E; background: #FFFFFF; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  a { color: #BD0C1A; text-decoration: none; }
+  a:hover { color: #9E0A16; }
+  ::selection { background: #FFB63D; color: #1C1C1E; }
+  input, textarea, button { font-family: inherit; }
+  @keyframes ip-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+  @keyframes ip-float-slow { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-22px); } }
+  @keyframes ip-reveal { from { opacity: 0; transform: translateY(42px); } to { opacity: 1; transform: none; } }
+  @keyframes ip-reveal-soft { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+  [data-reveal] { animation: ip-reveal linear both; animation-timeline: view(); animation-range: entry 5% entry 75%; }
+  [data-reveal-soft] { animation: ip-reveal-soft linear both; animation-timeline: view(); animation-range: entry 5% entry 65%; }
+</style>
+</helmet>
+
+<div style="min-height:100vh;overflow-x:hidden">
+
+  <!-- NAV -->
+  <header style="position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.82);backdrop-filter:saturate(180%) blur(18px);-webkit-backdrop-filter:saturate(180%) blur(18px);border-bottom:1px solid #ECEAE6">
+    <nav style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,48px);height:74px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+      <a href="#top" aria-label="Instituto Pivote — home" style="display:flex;align-items:center">
+        <img src="assets/pv-lockup.png" alt="Instituto Pivote — Escuela de Español" style="height:46px;width:auto;display:block" />
+      </a>
+
+      <div style="display:{{ desktopNav }};align-items:center;gap:38px">
+        <a href="#about" style="color:#4A4A4E;font-size:15px;font-weight:500">About</a>
+        <a href="#programs" style="color:#4A4A4E;font-size:15px;font-weight:500">Programs</a>
+        <a href="#gallery" style="color:#4A4A4E;font-size:15px;font-weight:500">Gallery</a>
+        <a href="#contact" style="color:#4A4A4E;font-size:15px;font-weight:500">Contact</a>
+        <a href="#contact" style="display:inline-flex;align-items:center;gap:8px;background:#BD0C1A;color:#fff;padding:11px 20px;border-radius:999px;font-size:14px;font-weight:600;box-shadow:0 8px 22px rgba(189,12,26,0.26);transition:transform .2s ease,box-shadow .2s ease" onMouseEnter="{{ liftIn }}" onMouseLeave="{{ liftOut }}">Book Free Placement Test <i data-lucide="arrow-right" style="width:16px;height:16px"></i></a>
+      </div>
+
+      <button aria-label="Menu" onClick="{{ toggleNav }}" style="display:{{ burger }};align-items:center;justify-content:center;width:44px;height:44px;border:1px solid #E6E4E0;background:#fff;border-radius:12px;cursor:pointer;color:#1C1C1E">
+        <i data-lucide="{{ burgerIcon }}" style="width:22px;height:22px"></i>
+      </button>
+    </nav>
+
+    <sc-if value="{{ mobileMenuOpen }}" hint-placeholder-val="{{ false }}">
+      <div style="border-top:1px solid #ECEAE6;background:#fff;padding:14px clamp(20px,5vw,48px) 22px;display:flex;flex-direction:column;gap:4px">
+        <a href="#about" onClick="{{ closeNav }}" style="color:#2B2B2E;font-size:17px;font-weight:500;padding:12px 4px;border-bottom:1px solid #F3F1EE">About</a>
+        <a href="#programs" onClick="{{ closeNav }}" style="color:#2B2B2E;font-size:17px;font-weight:500;padding:12px 4px;border-bottom:1px solid #F3F1EE">Programs</a>
+        <a href="#gallery" onClick="{{ closeNav }}" style="color:#2B2B2E;font-size:17px;font-weight:500;padding:12px 4px;border-bottom:1px solid #F3F1EE">Gallery</a>
+        <a href="#contact" onClick="{{ closeNav }}" style="color:#2B2B2E;font-size:17px;font-weight:500;padding:12px 4px;border-bottom:1px solid #F3F1EE">Contact</a>
+        <a href="#contact" onClick="{{ closeNav }}" style="margin-top:12px;display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#BD0C1A;color:#fff;padding:15px;border-radius:14px;font-size:16px;font-weight:600">Book Free Placement Test</a>
+      </div>
+    </sc-if>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section style="position:relative;background:linear-gradient(180deg,#FFFFFF 0%,#FBFAF8 100%);overflow:hidden">
+      <div style="position:absolute;top:-120px;right:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(241,191,0,0.16),transparent 68%);pointer-events:none"></div>
+      <div style="max-width:1200px;margin:0 auto;padding:clamp(48px,7vw,96px) clamp(20px,5vw,48px) clamp(56px,7vw,104px);display:flex;flex-wrap:wrap;align-items:center;gap:clamp(40px,6vw,72px)">
+
+        <div style="flex:1 1 440px;min-width:300px">
+          <div style="display:inline-flex;align-items:center;gap:9px;background:#fff;border:1px solid #EDE9E2;border-radius:999px;padding:7px 15px;box-shadow:0 4px 14px rgba(0,0,0,0.03);margin-bottom:26px">
+            <span style="width:7px;height:7px;border-radius:50%;background:#BD0C1A"></span>
+            <span style="font-size:13px;font-weight:600;letter-spacing:0.4px;color:#4A4A4E">SPANISH LANGUAGE INSTITUTE · EGYPT</span>
+          </div>
+          <h1 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(46px,6.6vw,86px);line-height:1.02;letter-spacing:-0.5px;margin:0 0 22px;color:#171719">Learn Spanish<br />with <span style="font-style:italic;color:#BD0C1A">Confidence.</span></h1>
+          <p style="font-size:clamp(16px,1.5vw,19px);line-height:1.6;color:#5C5C61;max-width:520px;margin:0 0 34px">Join Instituto Pivote and start your journey toward international opportunities, travel, and career growth through the Spanish language.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:14px">
+            <a href="#contact" style="display:inline-flex;align-items:center;gap:9px;background:#BD0C1A;color:#fff;padding:16px 28px;border-radius:999px;font-size:16px;font-weight:600;box-shadow:0 12px 30px rgba(189,12,26,0.28);transition:transform .2s ease,box-shadow .2s ease" onMouseEnter="{{ liftIn }}" onMouseLeave="{{ liftOut }}">Book Free Placement Test <i data-lucide="arrow-right" style="width:18px;height:18px"></i></a>
+            <a href="#contact" style="display:inline-flex;align-items:center;gap:9px;background:#fff;color:#1C1C1E;padding:16px 26px;border-radius:999px;font-size:16px;font-weight:600;border:1px solid #E4E1DC;transition:transform .2s ease" onMouseEnter="{{ liftIn }}" onMouseLeave="{{ liftOut }}"><i data-lucide="phone" style="width:18px;height:18px;color:#BD0C1A"></i> Contact Us</a>
+          </div>
+
+          <div style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,48px);margin-top:clamp(38px,5vw,54px)">
+            <div><div style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:40px;color:#171719;line-height:1"><span data-counter="1200">1,200</span><span style="color:#BD0C1A">+</span></div><div style="font-size:13.5px;color:#7A7A7E;margin-top:6px;font-weight:500">Students taught</div></div>
+            <div><div style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:40px;color:#171719;line-height:1"><span data-counter="6">6</span></div><div style="font-size:13.5px;color:#7A7A7E;margin-top:6px;font-weight:500">CEFR levels · A1–C2</div></div>
+            <div><div style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:40px;color:#171719;line-height:1"><span data-counter="98">98</span><span style="color:#BD0C1A">%</span></div><div style="font-size:13.5px;color:#7A7A7E;margin-top:6px;font-weight:500">Would recommend</div></div>
+          </div>
+        </div>
+
+        <div style="flex:1 1 400px;min-width:300px;position:relative">
+          <div style="position:relative;border-radius:26px;overflow:hidden;box-shadow:0 34px 80px rgba(23,23,25,0.18);aspect-ratio:4/5">
+            <img src="assets/hero.jpg" alt="Instituto Pivote — Habla Real, speak real Spanish" style="width:100%;height:100%;object-fit:cover;display:block" />
+          </div>
+          <div style="position:absolute;left:-18px;bottom:38px;background:#fff;border-radius:16px;padding:14px 18px;box-shadow:0 18px 40px rgba(23,23,25,0.16);display:flex;align-items:center;gap:12px;animation:ip-float 6s ease-in-out infinite">
+            <span style="width:40px;height:40px;border-radius:11px;background:#FFF3DC;display:flex;align-items:center;justify-content:center"><i data-lucide="graduation-cap" style="width:20px;height:20px;color:#C68A12"></i></span>
+            <div><div style="font-size:14px;font-weight:700;color:#171719">Native-level fluency</div><div style="font-size:12.5px;color:#8A8A8E">Certified curriculum</div></div>
+          </div>
+          <div style="position:absolute;right:-14px;top:34px;background:#BD0C1A;color:#fff;border-radius:16px;padding:14px 18px;box-shadow:0 18px 40px rgba(189,12,26,0.32);animation:ip-float-slow 7s ease-in-out infinite">
+            <div style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;line-height:1">Free</div>
+            <div style="font-size:12.5px;opacity:0.9;font-weight:500">Placement test</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" style="max-width:1200px;margin:0 auto;padding:clamp(64px,9vw,120px) clamp(20px,5vw,48px);display:flex;flex-wrap:wrap;align-items:center;gap:clamp(40px,6vw,80px)">
+      <div data-reveal style="flex:1 1 380px;min-width:300px;position:relative">
+        <div style="border-radius:22px;overflow:hidden;box-shadow:0 26px 60px rgba(23,23,25,0.14);aspect-ratio:5/6">
+          <img src="assets/about.jpg" alt="Instituto Pivote — it's never too late to become bilingual" style="width:100%;height:100%;object-fit:cover;display:block" />
+        </div>
+        <div style="position:absolute;right:-16px;bottom:-16px;width:96px;height:96px;border-radius:20px;background:#FFB63D;z-index:-1"></div>
+      </div>
+      <div data-reveal style="flex:1 1 420px;min-width:300px">
+        <span style="font-size:13px;font-weight:700;letter-spacing:1.4px;color:#BD0C1A">ABOUT INSTITUTO PIVOTE</span>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(34px,4.6vw,56px);line-height:1.06;letter-spacing:-0.4px;margin:16px 0 22px;color:#171719">A European approach to Spanish, made for Egypt.</h2>
+        <p style="font-size:17px;line-height:1.7;color:#5C5C61;margin:0 0 18px">Instituto Pivote was founded on a simple belief: language learning should feel elegant, personal, and genuinely effective. Our method blends immersive conversation, structured CEFR progression, and real cultural context — so you don't just memorise Spanish, you live it.</p>
+        <p style="font-size:17px;line-height:1.7;color:#5C5C61;margin:0 0 30px">Students choose us for our experienced native and native-level instructors, our small focused groups, and a schedule that fits modern life — online or in person.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:14px">
+          <a href="#contact" style="display:inline-flex;align-items:center;gap:9px;background:#BD0C1A;color:#fff;padding:14px 26px;border-radius:999px;font-size:15px;font-weight:600;box-shadow:0 12px 28px rgba(189,12,26,0.24);transition:transform .2s ease" onMouseEnter="{{ liftIn }}" onMouseLeave="{{ liftOut }}">Book Free Placement Test</a>
+          <a href="#programs" style="display:inline-flex;align-items:center;gap:8px;color:#171719;padding:14px 8px;font-size:15px;font-weight:600">Explore programs <i data-lucide="arrow-right" style="width:16px;height:16px"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section style="background:#F7F6F3;border-top:1px solid #EEECE8;border-bottom:1px solid #EEECE8">
+      <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,9vw,120px) clamp(20px,5vw,48px)">
+        <div data-reveal-soft style="max-width:640px;margin:0 auto clamp(44px,5vw,64px);text-align:center">
+          <span style="font-size:13px;font-weight:700;letter-spacing:1.4px;color:#BD0C1A">WHY CHOOSE US</span>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(34px,4.6vw,56px);line-height:1.06;letter-spacing:-0.4px;margin:14px 0 0;color:#171719">Everything you need to speak with confidence.</h2>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:18px">
+          <sc-for list="{{ features }}" as="f" hint-placeholder-count="6">
+            <div data-reveal-soft style="background:#fff;border:1px solid #EDEBE6;border-radius:20px;padding:30px 28px;transition:transform .25s ease,box-shadow .25s ease" onMouseEnter="{{ cardIn }}" onMouseLeave="{{ cardOut }}">
+              <span style="width:52px;height:52px;border-radius:14px;background:#FBEAEA;display:flex;align-items:center;justify-content:center;margin-bottom:20px"><i data-lucide="{{ f.icon }}" style="width:24px;height:24px;color:#BD0C1A"></i></span>
+              <h3 style="font-size:19px;font-weight:700;margin:0 0 8px;color:#1C1C1E">{{ f.title }}</h3>
+              <p style="font-size:15px;line-height:1.6;color:#6B6B70;margin:0">{{ f.desc }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRAMS -->
+    <section id="programs" style="max-width:1200px;margin:0 auto;padding:clamp(64px,9vw,120px) clamp(20px,5vw,48px)">
+      <div data-reveal-soft style="display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:20px;margin-bottom:clamp(40px,5vw,56px)">
+        <div style="max-width:620px">
+          <span style="font-size:13px;font-weight:700;letter-spacing:1.4px;color:#BD0C1A">OUR PROGRAMS</span>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(34px,4.6vw,56px);line-height:1.06;letter-spacing:-0.4px;margin:14px 0 0;color:#171719">A path for every learner.</h2>
+        </div>
+        <a href="#contact" style="display:inline-flex;align-items:center;gap:8px;color:#171719;font-size:15px;font-weight:600;white-space:nowrap">Not sure which fits? <span style="color:#BD0C1A">Ask us</span> <i data-lucide="arrow-right" style="width:16px;height:16px"></i></a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(288px,1fr));gap:20px">
+        <sc-for list="{{ programs }}" as="p" hint-placeholder-count="5">
+          <div data-reveal-soft style="display:flex;flex-direction:column;background:#fff;border:1px solid #EAE8E3;border-radius:22px;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease" onMouseEnter="{{ cardIn }}" onMouseLeave="{{ cardOut }}">
+            <div style="position:relative;aspect-ratio:16/10;background:#F1EFEB">
+              <img src="{{ p.img }}" alt="{{ p.title }} Spanish program at Instituto Pivote" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease" />
+              <span style="position:absolute;top:14px;left:14px;background:rgba(255,255,255,0.92);backdrop-filter:blur(6px);color:#171719;font-size:12.5px;font-weight:700;letter-spacing:0.3px;padding:6px 12px;border-radius:999px;display:inline-flex;align-items:center;gap:6px"><i data-lucide="clock" style="width:14px;height:14px;color:#BD0C1A"></i> {{ p.duration }}</span>
+            </div>
+            <div style="padding:26px 24px;display:flex;flex-direction:column;flex:1">
+              <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:26px;margin:0 0 8px;color:#171719">{{ p.title }}</h3>
+              <p style="font-size:15px;line-height:1.6;color:#6B6B70;margin:0 0 22px;flex:1">{{ p.desc }}</p>
+              <a href="#contact" style="display:inline-flex;align-items:center;gap:8px;color:#BD0C1A;font-size:15px;font-weight:700;align-self:flex-start">{{ p.cta }} <i data-lucide="arrow-right" style="width:16px;height:16px"></i></a>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" style="background:#171719;color:#fff">
+      <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,9vw,120px) clamp(20px,5vw,48px)">
+        <div data-reveal-soft style="display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:16px;margin-bottom:clamp(40px,5vw,56px)">
+          <div style="max-width:640px">
+            <span style="font-size:13px;font-weight:700;letter-spacing:1.4px;color:#FFB63D">GALLERY</span>
+            <h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(34px,4.6vw,56px);line-height:1.06;letter-spacing:-0.4px;margin:14px 0 12px">Life at Instituto Pivote.</h2>
+            <p style="font-size:16.5px;line-height:1.65;color:#B8B8BC;margin:0">A glimpse of our world — from free placement tests to real conversation, culture and career-changing Spanish.</p>
+          </div>
+          <a href="https://www.instagram.com/pivote.instituto" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,0.08);color:#fff;padding:12px 20px;border-radius:999px;font-size:14.5px;font-weight:600;border:1px solid rgba(255,255,255,0.16);white-space:nowrap">Follow @pivote.instituto <i data-lucide="arrow-up-right" style="width:16px;height:16px"></i></a>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(232px,1fr));gap:16px">
+          <sc-for list="{{ posts }}" as="post" hint-placeholder-count="6">
+            <a href="https://www.instagram.com/pivote.instituto" target="_blank" rel="noopener" data-reveal-soft style="display:block;border-radius:18px;overflow:hidden;position:relative;aspect-ratio:4/5;background:#1E1E22" onMouseEnter="{{ galIn }}" onMouseLeave="{{ galOut }}">
+              <img src="{{ post }}" alt="Instituto Pivote — Spanish learning post" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease" />
+            </a>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" style="background:linear-gradient(180deg,#FBFAF8 0%,#FFFFFF 100%)">
+      <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,9vw,120px) clamp(20px,5vw,48px);display:flex;flex-wrap:wrap;gap:clamp(40px,5vw,64px)">
+
+        <div data-reveal-soft style="flex:1 1 400px;min-width:300px">
+          <span style="font-size:13px;font-weight:700;letter-spacing:1.4px;color:#BD0C1A">GET STARTED</span>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(34px,4.6vw,56px);line-height:1.06;letter-spacing:-0.4px;margin:14px 0 16px;color:#171719">Book your free placement test.</h2>
+          <p style="font-size:17px;line-height:1.65;color:#5C5C61;margin:0 0 34px;max-width:460px">Tell us where you are on your journey. We'll assess your level and recommend the perfect program — completely free, no commitment.</p>
+
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <a href="tel:+201011134542" style="display:flex;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid #EDEBE6;color:#1C1C1E"><span style="width:46px;height:46px;border-radius:12px;background:#FBEAEA;display:flex;align-items:center;justify-content:center;flex-shrink:0"><i data-lucide="phone" style="width:20px;height:20px;color:#BD0C1A"></i></span><span><span style="display:block;font-size:12.5px;color:#9A9A9E;font-weight:600;letter-spacing:0.3px">PHONE</span><span style="font-size:16px;font-weight:600">+20 10 11134542</span></span></a>
+            <a href="mailto:info@institutopivote.com" style="display:flex;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid #EDEBE6;color:#1C1C1E"><span style="width:46px;height:46px;border-radius:12px;background:#FBEAEA;display:flex;align-items:center;justify-content:center;flex-shrink:0"><i data-lucide="mail" style="width:20px;height:20px;color:#BD0C1A"></i></span><span><span style="display:block;font-size:12.5px;color:#9A9A9E;font-weight:600;letter-spacing:0.3px">EMAIL</span><span style="font-size:16px;font-weight:600">info@institutopivote.com</span></span></a>
+            <div style="display:flex;align-items:flex-start;gap:16px;padding:16px 0;border-bottom:1px solid #EDEBE6"><span style="width:46px;height:46px;border-radius:12px;background:#FBEAEA;display:flex;align-items:center;justify-content:center;flex-shrink:0"><i data-lucide="map-pin" style="width:20px;height:20px;color:#BD0C1A"></i></span><span><span style="display:block;font-size:12.5px;color:#9A9A9E;font-weight:600;letter-spacing:0.3px">ALEXANDRIA BRANCH</span><span style="font-size:16px;font-weight:600;color:#1C1C1E">58 Abdelaziz Fahmy Street, Stanly</span></span></div>
+            <div style="display:flex;align-items:flex-start;gap:16px;padding:16px 0;border-bottom:1px solid #EDEBE6"><span style="width:46px;height:46px;border-radius:12px;background:#FBEAEA;display:flex;align-items:center;justify-content:center;flex-shrink:0"><i data-lucide="map-pin" style="width:20px;height:20px;color:#BD0C1A"></i></span><span><span style="display:block;font-size:12.5px;color:#9A9A9E;font-weight:600;letter-spacing:0.3px">GIZA BRANCH</span><span style="font-size:16px;font-weight:600;color:#1C1C1E">Villa 7, Amin El-Rafeyey Street, Dokki</span></span></div>
+            <div style="display:flex;align-items:center;gap:16px;padding:16px 0"><span style="width:46px;height:46px;border-radius:12px;background:#FBEAEA;display:flex;align-items:center;justify-content:center;flex-shrink:0"><i data-lucide="clock" style="width:20px;height:20px;color:#BD0C1A"></i></span><span><span style="display:block;font-size:12.5px;color:#9A9A9E;font-weight:600;letter-spacing:0.3px">WORKING HOURS</span><span style="font-size:16px;font-weight:600;color:#1C1C1E">Sat–Thu · 10:00 – 21:00</span></span></div>
+          </div>
+
+          <div style="margin-top:24px;position:relative;border-radius:18px;overflow:hidden;height:200px;border:1px solid #EAE8E3">
+            <image-slot id="map" shape="rect" placeholder="Google Maps — Alexandria & Giza branches"></image-slot>
+          </div>
+        </div>
+
+        <div data-reveal-soft style="flex:1 1 380px;min-width:300px">
+          <div style="background:#fff;border:1px solid #EAE8E3;border-radius:24px;padding:clamp(26px,3.5vw,40px);box-shadow:0 26px 60px rgba(23,23,25,0.08)">
+            <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+              <div style="text-align:center;padding:30px 6px">
+                <span style="width:64px;height:64px;border-radius:50%;background:#EAF6EE;display:inline-flex;align-items:center;justify-content:center;margin-bottom:18px"><i data-lucide="check" style="width:30px;height:30px;color:#1B8A4B"></i></span>
+                <h3 style="font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600;margin:0 0 10px;color:#171719">¡Gracias!</h3>
+                <p style="font-size:16px;color:#5C5C61;line-height:1.6;margin:0">Your request is in. Our team will reach out within 24 hours to schedule your free placement test.</p>
+              </div>
+            </sc-if>
+            <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
+              <form onSubmit="{{ onSubmit }}">
+                <h3 style="font-family:'Cormorant Garamond',serif;font-size:27px;font-weight:600;margin:0 0 4px;color:#171719">Request your test</h3>
+                <p style="font-size:14.5px;color:#8A8A8E;margin:0 0 24px">We reply within 24 hours.</p>
+                <div style="display:flex;flex-direction:column;gap:15px">
+                  <label style="display:block"><span style="display:block;font-size:13px;font-weight:600;color:#4A4A4E;margin-bottom:7px">Full name</span><input name="name" required placeholder="Your name" style="width:100%;padding:14px 16px;border:1px solid #E2DFD9;border-radius:12px;font-size:15px;background:#FBFAF8;outline:none;transition:border-color .2s,box-shadow .2s" onFocus="{{ fieldFocus }}" onBlur="{{ fieldBlur }}" /></label>
+                  <label style="display:block"><span style="display:block;font-size:13px;font-weight:600;color:#4A4A4E;margin-bottom:7px">Phone</span><input name="phone" required placeholder="+20 …" style="width:100%;padding:14px 16px;border:1px solid #E2DFD9;border-radius:12px;font-size:15px;background:#FBFAF8;outline:none;transition:border-color .2s,box-shadow .2s" onFocus="{{ fieldFocus }}" onBlur="{{ fieldBlur }}" /></label>
+                  <label style="display:block"><span style="display:block;font-size:13px;font-weight:600;color:#4A4A4E;margin-bottom:7px">Email</span><input name="email" type="email" required placeholder="you@email.com" style="width:100%;padding:14px 16px;border:1px solid #E2DFD9;border-radius:12px;font-size:15px;background:#FBFAF8;outline:none;transition:border-color .2s,box-shadow .2s" onFocus="{{ fieldFocus }}" onBlur="{{ fieldBlur }}" /></label>
+                  <label style="display:block"><span style="display:block;font-size:13px;font-weight:600;color:#4A4A4E;margin-bottom:7px">Message</span><textarea name="message" rows="3" placeholder="Tell us about your goals (optional)" style="width:100%;padding:14px 16px;border:1px solid #E2DFD9;border-radius:12px;font-size:15px;background:#FBFAF8;outline:none;resize:vertical;transition:border-color .2s,box-shadow .2s" onFocus="{{ fieldFocus }}" onBlur="{{ fieldBlur }}"></textarea></label>
+                  <button type="submit" style="margin-top:4px;width:100%;display:inline-flex;align-items:center;justify-content:center;gap:9px;background:#BD0C1A;color:#fff;padding:16px;border:none;border-radius:14px;font-size:16px;font-weight:600;cursor:pointer;box-shadow:0 12px 28px rgba(189,12,26,0.26);transition:transform .2s ease" onMouseEnter="{{ liftIn }}" onMouseLeave="{{ liftOut }}">Book Free Placement Test <i data-lucide="arrow-right" style="width:18px;height:18px"></i></button>
+                  <p style="font-size:12.5px;color:#9A9A9E;text-align:center;margin:6px 0 0">No commitment · Free assessment · Reply within 24h</p>
+                </div>
+              </form>
+            </sc-if>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,48px) clamp(64px,8vw,110px)">
+      <div data-reveal-soft style="position:relative;overflow:hidden;border-radius:28px;background:#BD0C1A;color:#fff;padding:clamp(44px,6vw,80px) clamp(28px,5vw,72px);text-align:center">
+        <div style="position:absolute;top:-80px;right:-60px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(241,191,0,0.35),transparent 66%);pointer-events:none"></div>
+        <div style="position:absolute;bottom:-90px;left:-50px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,0.12),transparent 66%);pointer-events:none"></div>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(32px,4.4vw,54px);line-height:1.08;margin:0 auto 16px;max-width:640px;position:relative">Your Spanish story starts today.</h2>
+        <p style="font-size:17px;line-height:1.6;color:rgba(255,255,255,0.86);max-width:520px;margin:0 auto 30px;position:relative">Book your free placement test and take the first confident step.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;position:relative">
+          <a href="#contact" style="display:inline-flex;align-items:center;gap:9px;background:#fff;color:#BD0C1A;padding:16px 30px;border-radius:999px;font-size:16px;font-weight:700;transition:transform .2s ease" onMouseEnter="{{ liftIn }}" onMouseLeave="{{ liftOut }}">Book Free Placement Test</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer style="background:#0F0F11;color:#B8B8BC">
+    <div style="max-width:1200px;margin:0 auto;padding:clamp(48px,6vw,72px) clamp(20px,5vw,48px) 40px;display:flex;flex-wrap:wrap;gap:44px;justify-content:space-between">
+      <div style="flex:1 1 280px;max-width:340px">
+        <a href="#top" style="display:flex;align-items:center;gap:14px;color:#fff;margin-bottom:18px">
+          <img src="assets/pv-mark.png" alt="Instituto Pivote" style="height:52px;width:auto;display:block" />
+          <span style="display:flex;flex-direction:column;line-height:1.05"><span style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:#fff">Instituto Pivote</span><span style="font-size:13px;color:#8A8A8E;font-weight:500;letter-spacing:0.3px">Escuela de Español</span></span>
+        </a>
+        <p style="font-size:14.5px;line-height:1.65;margin:0 0 20px;color:#9A9A9E">Premium Spanish language education in Egypt. Learn with confidence — online and in person.</p>
+        <div style="display:flex;gap:10px">
+          <a href="https://www.instagram.com/pivote.instituto" target="_blank" rel="noopener" aria-label="Instagram" style="width:42px;height:42px;border-radius:11px;background:#1B1B1E;display:flex;align-items:center;justify-content:center;color:#fff;transition:background .2s" onMouseEnter="{{ socialIn }}" onMouseLeave="{{ socialOut }}"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg></a>
+          <a href="https://www.facebook.com/Pivote.Instituto" target="_blank" rel="noopener" aria-label="Facebook" style="width:42px;height:42px;border-radius:11px;background:#1B1B1E;display:flex;align-items:center;justify-content:center;color:#fff;transition:background .2s" onMouseEnter="{{ socialIn }}" onMouseLeave="{{ socialOut }}"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h2.5V5.5H14c-2.2 0-3.5 1.4-3.5 3.6V11H8v3.5h2.5V22H14v-7.5h2.5L17 11h-3V9.4c0-.3.2-.4.5-.4Z"></path></svg></a>
+        </div>
+      </div>
+      <div style="flex:0 1 auto">
+        <div style="font-size:13px;font-weight:700;letter-spacing:0.8px;color:#fff;margin-bottom:16px">QUICK LINKS</div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <a href="#about" style="color:#9A9A9E;font-size:15px">About</a>
+          <a href="#programs" style="color:#9A9A9E;font-size:15px">Programs</a>
+          <a href="#gallery" style="color:#9A9A9E;font-size:15px">Gallery</a>
+          <a href="#contact" style="color:#9A9A9E;font-size:15px">Contact</a>
+        </div>
+      </div>
+      <div style="flex:0 1 auto">
+        <div style="font-size:13px;font-weight:700;letter-spacing:0.8px;color:#fff;margin-bottom:16px">PROGRAMS</div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <a href="#programs" style="color:#9A9A9E;font-size:15px">Adults</a>
+          <a href="#programs" style="color:#9A9A9E;font-size:15px">Kids</a>
+          <a href="#programs" style="color:#9A9A9E;font-size:15px">Private Classes</a>
+          <a href="#programs" style="color:#9A9A9E;font-size:15px">Corporate Training</a>
+          <a href="#programs" style="color:#9A9A9E;font-size:15px">Online Learning</a>
+        </div>
+      </div>
+      <div style="flex:1 1 240px;max-width:300px">
+        <div style="font-size:13px;font-weight:700;letter-spacing:0.8px;color:#fff;margin-bottom:16px">READY TO START?</div>
+        <a href="#contact" style="display:inline-flex;align-items:center;gap:9px;background:#BD0C1A;color:#fff;padding:14px 24px;border-radius:999px;font-size:15px;font-weight:600;margin-bottom:16px">Book Free Placement Test</a>
+        <p style="font-size:14px;color:#9A9A9E;margin:0;line-height:1.7">Alexandria — 58 Abdelaziz Fahmy St, Stanly<br />Giza — Villa 7, Amin El-Rafeyey St, Dokki<br />Sat–Thu · 10:00–21:00</p>
+      </div>
+    </div>
+    <div style="border-top:1px solid #1E1E22">
+      <div style="max-width:1200px;margin:0 auto;padding:22px clamp(20px,5vw,48px);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center">
+        <span style="font-size:13.5px;color:#77777C">© 2026 Instituto Pivote. All rights reserved.</span>
+        <span style="font-size:13.5px;color:#77777C">Created and designed by Scopex</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { vw: 1200, navOpen: false, submitted: false };
+
+  componentDidMount() {
+    this._onResize = () => {
+      const w = window.innerWidth;
+      if ((w < 900) !== (this.state.vw < 900)) this.setState({ vw: w });
+      else this.state.vw = w;
+    };
+    this.state.vw = window.innerWidth;
+    window.addEventListener('resize', this._onResize);
+    this._icons();
+    this._counters();
+    this.forceUpdate();
+  }
+
+  componentDidUpdate() { this._icons(); }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this._onResize);
+    if (this._io) this._io.disconnect();
+  }
+
+  _icons() {
+    if (window.lucide && window.lucide.createIcons) {
+      try { window.lucide.createIcons(); } catch (e) {}
+    } else {
+      setTimeout(() => { if (window.lucide) { try { window.lucide.createIcons(); } catch (e) {} } }, 400);
+    }
+  }
+
+  _counters() {
+    const run = () => {
+      const els = document.querySelectorAll('[data-counter]');
+      if (!els.length) { setTimeout(run, 300); return; }
+      this._io = new IntersectionObserver((entries) => {
+        entries.forEach((en) => {
+          if (!en.isIntersecting || en.target.dataset.done) return;
+          const el = en.target;
+          el.dataset.done = '1';
+          const target = parseInt(el.dataset.counter, 10);
+          const dur = 1400;
+          const start = performance.now();
+          const tick = (now) => {
+            const t = Math.min(1, (now - start) / dur);
+            const eased = 1 - Math.pow(1 - t, 3);
+            const val = Math.round(target * eased);
+            el.textContent = val >= 1000 ? val.toLocaleString('en-US') : String(val);
+            if (t < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+        });
+      }, { threshold: 0.6 });
+      els.forEach((el) => this._io.observe(el));
+    };
+    run();
+  }
+
+  toggleNav = () => this.setState(s => ({ navOpen: !s.navOpen }));
+  closeNav = () => this.setState({ navOpen: false });
+
+  liftIn = (e) => { e.currentTarget.style.transform = 'translateY(-2px)'; };
+  liftOut = (e) => { e.currentTarget.style.transform = 'translateY(0)'; };
+  cardIn = (e) => { e.currentTarget.style.transform = 'translateY(-6px)'; e.currentTarget.style.boxShadow = '0 22px 50px rgba(23,23,25,0.12)'; const img = e.currentTarget.querySelector('img'); if (img) img.style.transform = 'scale(1.05)'; };
+  cardOut = (e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = 'none'; const img = e.currentTarget.querySelector('img'); if (img) img.style.transform = 'scale(1)'; };
+  socialIn = (e) => { e.currentTarget.style.background = '#BD0C1A'; };
+  socialOut = (e) => { e.currentTarget.style.background = '#1B1B1E'; };
+  galIn = (e) => { const img = e.currentTarget.querySelector('img'); if (img) img.style.transform = 'scale(1.05)'; };
+  galOut = (e) => { const img = e.currentTarget.querySelector('img'); if (img) img.style.transform = 'scale(1)'; };
+  fieldFocus = (e) => { e.currentTarget.style.borderColor = '#BD0C1A'; e.currentTarget.style.boxShadow = '0 0 0 3px rgba(189,12,26,0.10)'; e.currentTarget.style.background = '#fff'; };
+  fieldBlur = (e) => { e.currentTarget.style.borderColor = '#E2DFD9'; e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.background = '#FBFAF8'; };
+
+  onSubmit = (e) => {
+    e.preventDefault();
+    this.setState({ submitted: true });
+  };
+
+  renderVals() {
+    const mobile = (this.state.vw || 1200) < 900;
+    return {
+      desktopNav: mobile ? 'none' : 'flex',
+      burger: mobile ? 'flex' : 'none',
+      burgerIcon: this.state.navOpen ? 'x' : 'menu',
+      mobileMenuOpen: mobile && this.state.navOpen,
+      submitted: this.state.submitted,
+      notSubmitted: !this.state.submitted,
+      toggleNav: this.toggleNav,
+      closeNav: this.closeNav,
+      onSubmit: this.onSubmit,
+      liftIn: this.liftIn, liftOut: this.liftOut,
+      cardIn: this.cardIn, cardOut: this.cardOut,
+      socialIn: this.socialIn, socialOut: this.socialOut,
+      galIn: this.galIn, galOut: this.galOut,
+      posts: ['assets/post-1.jpg','assets/post-2.jpg','assets/post-3.jpg','assets/post-4.jpg','assets/post-5.jpg','assets/post-6.jpg'],
+      fieldFocus: this.fieldFocus, fieldBlur: this.fieldBlur,
+      features: [
+        { icon: 'user-round-check', title: 'Experienced instructors', desc: 'Native and native-level teachers who make every session engaging and clear.' },
+        { icon: 'messages-square', title: 'Interactive classes', desc: 'Conversation-first lessons that get you speaking from day one.' },
+        { icon: 'calendar-clock', title: 'Flexible schedules', desc: 'Morning, evening and weekend slots that fit around work and study.' },
+        { icon: 'monitor-smartphone', title: 'Online & offline', desc: 'Join from our Cairo campus or live online — the same premium experience.' },
+        { icon: 'users-round', title: 'Small groups', desc: 'Focused classes with limited seats, so you get real attention and practice.' },
+        { icon: 'badge-percent', title: 'Affordable pricing', desc: 'Premium teaching with transparent, honest pricing and flexible plans.' }
+      ],
+      programs: [
+        { title: 'Adults', img: 'assets/prog-adults.jpg', duration: 'Ongoing · 8-wk terms', desc: 'Structured A1–C2 progression for professionals and travellers who want real fluency.', cta: 'Start learning' },
+        { title: 'Kids', img: 'assets/prog-kids.jpg', duration: 'Ages 7–14', desc: 'Playful, confidence-building Spanish through stories, games and gentle progression.', cta: 'Enrol your child' },
+        { title: 'Private Classes', img: 'assets/prog-private.jpg', duration: '1-on-1 · Flexible', desc: 'A fully personalised curriculum built around your goals, pace and schedule.', cta: 'Book privately' },
+        { title: 'Corporate Training', img: 'assets/prog-corporate.jpg', duration: 'Custom programs', desc: 'Equip your team with practical business Spanish through on-site or online training.', cta: 'Request a proposal' },
+        { title: 'Online Learning', img: 'assets/prog-online.jpg', duration: 'Live · Anywhere', desc: 'The full Instituto Pivote experience from home — live, interactive, and personal.', cta: 'Join online' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
